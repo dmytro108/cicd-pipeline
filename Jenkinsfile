@@ -9,7 +9,8 @@ pipeline {
     stage('Build') {
         steps {
             script {
-                sh 'scripts/build.sh'
+                sh 'chmod ugo+x ./scripts/build.sh'
+                sh './scripts/build.sh'
             }
         }
     }
