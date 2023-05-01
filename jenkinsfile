@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Git checkout') {
       steps {
-       git git@github.com:dmytro108/cicd-pipeline.git
+       git https://github.com/dmytro108/cicd-pipeline.git
 
       }
     }
