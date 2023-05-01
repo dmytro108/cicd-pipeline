@@ -20,7 +20,7 @@ pipeline {
 //   }
 
 
-// }
+ }
 // environment {
 //   registry = 'dmytro108/cicdepam'
 // }
