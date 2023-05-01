@@ -6,11 +6,11 @@ pipeline {
         checkout scm
        }
     }
-    stage('Build') {
-        steps {
-            script scripts/build.sh
-        }
-    }
+    // stage('Build') {
+    //     steps {
+    //         script scripts/build.sh
+    //     }
+    // }
 
 //     stage('Publish') {
 //       steps {
