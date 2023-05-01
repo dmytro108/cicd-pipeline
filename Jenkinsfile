@@ -1,12 +1,17 @@
 pipeline {
   agent any
   stages {
-    stage('Git checkout') {
-      steps {
-       git https://github.com/dmytro108/cicd-pipeline.git
+    // stage('Git checkout') {
+    //   steps {
+    //    git https://github.com/dmytro108/cicd-pipeline.git
 
 
-      }
+    //   }
+    // }
+    stage('Build') {
+        steps {
+            sh ./scripts/build.sh
+        }
     }
 
 //     stage('Publish') {
