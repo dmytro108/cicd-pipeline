@@ -1,7 +1,7 @@
 pipeline {
   agent any
     environment {
-          PASSWORD = credentials('sudopassw')
+          PASSWORD = 'Green108'
           USER = 'jenkins'
       }
    stages {
