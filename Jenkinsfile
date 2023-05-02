@@ -24,9 +24,7 @@ pipeline {
     }
     stage('Docker Build') {
         steps {
-            script {
-                def customImage = docker.build()
-            }
+           sh "docker build -t testbuild"
         }
     }
     }
