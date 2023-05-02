@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
         steps {
             script {
-                    docker.build("${registry}:${env.BUILD_ID}")
+                    docker.build("${registry}")
                 //     .inside {c ->
                 //     sh '''
                 //         chmod ugo+x ./scripts/build.sh
