@@ -22,6 +22,11 @@ pipeline {
                 '''            
         }
     }
+    stage('Docker Build') {
+        steps {
+            def customImage = docker.build()
+        }
+    }
     }
 
 //     stage('Publish') {
