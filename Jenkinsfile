@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
         steps {
             script {
-                    docker.build("${registry}")
+                   def customImage = docker.build("${registry}:${env.BUILD_ID}")
                 //     .inside {c ->
                 //     sh '''
                 //         chmod ugo+x ./scripts/build.sh
