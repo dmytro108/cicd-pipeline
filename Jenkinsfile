@@ -1,10 +1,5 @@
 pipeline {
   agent any
-  docker {
-      image 'mybuild'
-      dns '8.8.8.8'
-      dns '8.8.4.4'
-    }
    stages {
      stage('Git checkout') {
        steps {
@@ -17,7 +12,7 @@ pipeline {
                 // docker build -t mybuild
                    //def customImage = docker.build("${registry}:${env.BUILD_ID}").inside {c ->
                      sh '''
-                         docker build -t mybuild
+                         docker build --dns 8.8.8.8 -t mybuild
                          chmod ugo+x ./scripts/build.sh
                          ./scripts/build.sh
                      '''
