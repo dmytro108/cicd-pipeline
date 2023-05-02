@@ -21,7 +21,7 @@ pipeline {
                          chmod ugo+x ./scripts/build.sh
                          ./scripts/build.sh
                      '''
-                 }                
+                 //}                
                 
         }
     }
