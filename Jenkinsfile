@@ -15,7 +15,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'sudopassw', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
                 // echo ${PASSWORD} | sudo -S dnf install npm -y
                 sh "echo $PASSWORD > /tmp/passw"
-                sh "sudo -A dnf install mypack -y < /tmp/passw"
+                sh "sudo -S dnf install mypack -y < /tmp/passw"
                 // chmod ugo+x ./scripts/build.sh
                 // ./scripts/build.sh
                 
