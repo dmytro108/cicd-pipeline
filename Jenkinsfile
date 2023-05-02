@@ -12,7 +12,7 @@ pipeline {
                 // docker build -t mybuild
                    //def customImage = docker.build("${registry}:${env.BUILD_ID}").inside {c ->
                      sh '''
-                         docker build --dns 8.8.8.8 -t mybuild
+                         docker build -t mybuild
                          chmod ugo+x ./scripts/build.sh
                          ./scripts/build.sh
                      '''
