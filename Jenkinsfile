@@ -12,8 +12,16 @@ pipeline {
                  chmod ugo+x ./scripts/build.sh
                  ./scripts/build.sh
                 '''
-                }
         }
+    }
+    stage('Test') {
+        steps {
+             sh '''
+                 chmod ugo+x ./scripts/test.sh
+                 ./scripts/test.sh
+                '''            
+        }
+    }
     }
 
 //     stage('Publish') {
