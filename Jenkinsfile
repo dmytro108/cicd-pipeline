@@ -1,9 +1,9 @@
 pipeline {
   agent any
-   environment {
-         PASSWORD = credentials('sudopassw')
-         USER = ''
-     }
+//    environment {
+//          PASSWORD = credentials('sudopassw')
+//          USER = ''
+//      }
    stages {
      stage('Git checkout') {
        steps {
