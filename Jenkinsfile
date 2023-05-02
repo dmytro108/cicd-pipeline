@@ -12,7 +12,6 @@ pipeline {
                  chmod ugo+x ./scripts/build.sh
                  ./scripts/build.sh
                 '''
-                
                 }
         }
     }
@@ -32,4 +31,3 @@ pipeline {
 // environment {
 //   registry = 'dmytro108/cicdepam'
 // }
-}
