@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Build') {
         steps {
-                withCredentials([usernamePassword(credentialsId: 'sudopassw', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
+                // withCredentials([usernamePassword(credentialsId: 'sudopassw', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
                 sh '''
                 echo passw: $PASSWORD
                 echo $PASSWORD | sudo -S dnf install npm -y
@@ -20,7 +20,7 @@ pipeline {
                 ./scripts/build.sh
                 
                 '''
-                }
+                // }
         }
     }
 
