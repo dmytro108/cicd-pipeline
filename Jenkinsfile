@@ -1,7 +1,7 @@
 pipeline {
   agent any
     environment {
-          PASSWORD = 'Green108'
+          PASSWORD = credentials('sudopassw')
           USER = 'jenkins'
       }
    stages {
@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Build') {
         steps {
-                // withCredentials([usernamePassword(credentialsId: 'sudopassw', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
+                withCredentials([usernamePassword(credentialsId: 'sudopassw', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
                 // echo ${PASSWORD} | sudo -S dnf install npm -y
                 sh "echo $PASSWORD > /tmp/passw"
                 sh "sudo -S -s 'dnf install mypack -y'"
@@ -20,7 +20,7 @@ pipeline {
                 // ./scripts/build.sh
                 
                 
-                // }
+                }
         }
     }
 
