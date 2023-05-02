@@ -49,3 +49,4 @@ pipeline {
  environment {
    registry = 'dmytro108/cicdhw'
  }
+}
