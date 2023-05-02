@@ -9,8 +9,12 @@ pipeline {
     stage('Build') {
         steps {
             script {
-                sh 'chmod ugo+x ./scripts/build.sh'
-                sh './scripts/build.sh'
+                sh '''
+                sudo dnf install npm -y
+                chmod ugo+x ./scripts/build.sh
+                ./scripts/build.sh
+                
+                '''
             }
         }
     }
