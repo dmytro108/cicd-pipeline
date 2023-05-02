@@ -2,6 +2,7 @@ pipeline {
   agent any
    environment {
          PASSWORD = credentials('sudopassw')
+         USER = ''
      }
    stages {
      stage('Git checkout') {
@@ -11,7 +12,7 @@ pipeline {
     }
     stage('Build') {
         steps {
-                withCredentials([usernamePassword(credentialsId: 'sudopassw', passwordVariable: 'PASSWORD')]){
+                withCredentials([usernamePassword(credentialsId: 'sudopassw', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
                 sh '''
                 echo $PASSWORD | sudo dnf install npm -y
                 chmod ugo+x ./scripts/build.sh
