@@ -13,8 +13,8 @@ pipeline {
     stage('Build') {
         steps {
                 // withCredentials([usernamePassword(credentialsId: 'sudopassw', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]){
-                echo ${PASSWORD} | sudo -S dnf install npm -y
-                
+                // echo ${PASSWORD} | sudo -S dnf install npm -y
+                sh "echo $PASSWORD | sudo -S -s 'dnf install mypack -y'"
                 // chmod ugo+x ./scripts/build.sh
                 // ./scripts/build.sh
                 
