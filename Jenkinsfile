@@ -13,7 +13,7 @@ pipeline {
         steps {
                 withCredentials([usernamePassword(credentialsId: 'sudopassw', passwordVariable: 'PASSWORD')]){
                 sh '''
-                echo $PASSWD | sudo dnf install npm -y
+                echo $PASSWORD | sudo dnf install npm -y
                 chmod ugo+x ./scripts/build.sh
                 ./scripts/build.sh
                 
