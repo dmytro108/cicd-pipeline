@@ -21,19 +21,11 @@ pipeline {
                  ./scripts/test.sh
                 '''            
     }
-    // stage('Test') {
-    //     steps {
-    //          sh '''
-    //              chmod ugo+x ./scripts/test.sh
-    //              ./scripts/test.sh
-    //             '''            
-    //     }
-    // }
-    // stage('Docker Build') {
-    //     steps {
-    //        sh "docker build -t testbuild"
-    //     }
-    // }
+     stage('Docker Build') {
+         steps {
+            docker.build("${registry}:${env.BUILD_ID}")
+         }
+     }
     }
 
 //     stage('Publish') {
