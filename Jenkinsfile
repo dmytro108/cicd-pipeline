@@ -25,7 +25,9 @@ pipeline {
 
     stage('Docker Build') {
          steps {
-            docker.build("${registry}:${env.BUILD_ID}")
+            script{
+                docker.build("${registry}:${env.BUILD_ID}")
+            }
          }
      }
     }
