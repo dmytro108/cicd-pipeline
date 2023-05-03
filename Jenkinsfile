@@ -19,8 +19,9 @@ pipeline {
              sh '''
                  chmod ugo+x ./scripts/test.sh
                  ./scripts/test.sh
-                '''            
+        }        '''            
     }
+
      stage('Docker Build') {
          steps {
             docker.build("${registry}:${env.BUILD_ID}")
