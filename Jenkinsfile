@@ -7,6 +7,7 @@ pipeline {
     }
 
    stages {
+
 // ******************** GIT Checkout *******************************
         stage('Git checkout') {
             steps {
