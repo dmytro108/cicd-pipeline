@@ -8,15 +8,18 @@ pipeline {
     }
     stage('Build') {
         steps {
-            script {
-                   def customImage = docker.build("${registry}:${env.BUILD_ID}").inside {c ->
                      sh '''
                          chmod ugo+x ./scripts/build.sh
                          ./scripts/build.sh
                      '''
                  }                
-                
         }
+    stage('Test') {
+        steps {
+             sh '''
+                 chmod ugo+x ./scripts/test.sh
+                 ./scripts/test.sh
+                '''            
     }
     // stage('Test') {
     //     steps {
